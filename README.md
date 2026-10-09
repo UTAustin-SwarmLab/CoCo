@@ -3,9 +3,9 @@
 <h2 align="center">TSFM Meets LLM: <ins>Co</ins>ntext as <ins>Co</ins>variate (NeurIPS'26)</h2>
 
 <p align="center">
-  <a href="#release-links">📄 Paper (coming soon)</a> &nbsp;|&nbsp;
-  <a href="https://github.com/UTAustin-SwarmLab/CoCo"><img src="assets/github.svg" width="16" height="16" alt="GitHub icon"> GitHub</a> &nbsp;|&nbsp;
-  <a href="https://huggingface.co/collections/SWARM-Lab/coco-6ac8255ad044393eed8316c0">🤗 Hugging Face</a>
+  📄 <a href="https://neurips.cc/virtual/2026/loc/sydney/poster/149079">Paper</a> &nbsp;|&nbsp;
+  <img src="assets/github.svg" width="16" height="16" alt="GitHub icon"> <a href="https://github.com/UTAustin-SwarmLab/CoCo">GitHub</a> &nbsp;|&nbsp;
+  🤗 <a href="https://huggingface.co/collections/SWARM-Lab/coco-6ac8255ad044393eed8316c0">Hugging Face</a>
 </p>
 
 CoCo combines historical numerical values and textual context to forecast time
@@ -143,6 +143,6 @@ memory; Qwen's adapter is loaded by PEFT or vLLM. Models load once per instance.
 
 ## Release links
 
-The paper URL will be added when confirmed.
+The Paper link currently points to the NeurIPS poster page.
 The Hugging Face link above points to the CoCo collection; model access remains
 restricted during private staging.
