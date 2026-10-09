@@ -18,6 +18,10 @@ This repository provides standalone inference with **Transformers + PEFT** or
 optional greedy mode uses the forecast covariate alone. No inference server,
 research repository, or evaluation dataset is required.
 
+![CoCo architecture: an LLM generates forecast and confidence covariates for Chronos2](assets/architecture.png)
+
+**Context as Covariates.** The LLM turns numerical history and text into forecast and confidence covariates, which Chronos2 combines with the history to produce the final forecast.
+
 ## Installation
 
 From the repository directory, install the locked dependencies with `uv` and
@@ -130,6 +134,12 @@ your Hugging Face credentials. It also accepts local paths or Hub IDs through
 `llm_base`, `chronos_base`, `llm_adapter`, and `chronos_adapter`; optional revision
 arguments allow pinning all four components. Chronos2's adapter is merged in
 memory; Qwen's adapter is loaded by PEFT or vLLM. Models load once per instance.
+
+## Benchmarks
+
+![Average rank and mean MAE of CoCo and 27 baselines across 95 settings](assets/rank_mae.png)
+
+**CoCo achieves the best average rank and mean MAE against 27 baselines across 30 datasets (95 settings).** Lower is better for both metrics.
 
 ## Release links
 
