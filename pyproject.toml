@@ -3,7 +3,7 @@ requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "coco-forecast"
+name = "coco-ts"
 version = "0.1.0"
 description = "CoCo: standalone text-aided time-series forecasting"
 readme = "README.md"

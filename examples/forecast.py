@@ -1,7 +1,7 @@
 """Run with: uv run python examples/forecast.py --device cuda:0"""
 import argparse
 import numpy as np
-from coco import CoCo
+from coco_ts import CoCo
 
 def main():
     p = argparse.ArgumentParser()

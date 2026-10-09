@@ -1,6 +1,12 @@
-# TSFM Meets LLM: Context as Covariates
+<h1 align="center">CoCo</h1>
 
-[Paper (coming soon)](#release-links) | [GitHub](https://github.com/UTAustin-SwarmLab/CoCo) | [Hugging Face](https://huggingface.co/collections/SWARM-Lab/coco-6ac8255ad044393eed8316c0)
+<h2 align="center">TSFM Meets LLM: <ins>Co</ins>ntext as <ins>Co</ins>variate (NeurIPS'26)</h2>
+
+<p align="center">
+  <a href="#release-links">📄 Paper (coming soon)</a> &nbsp;|&nbsp;
+  <a href="https://github.com/UTAustin-SwarmLab/CoCo"><img src="assets/github.svg" width="16" height="16" alt="GitHub icon"> GitHub</a> &nbsp;|&nbsp;
+  <a href="https://huggingface.co/collections/SWARM-Lab/coco-6ac8255ad044393eed8316c0">🤗 Hugging Face</a>
+</p>
 
 CoCo combines historical numerical values and textual context to forecast time
 series. A fine-tuned **Qwen3-4B** generates forecast and confidence covariates,
@@ -37,7 +43,7 @@ uv run python examples/forecast.py --device cuda:0
 Or forecast directly from Python (five rollouts with both covariates by default):
 
 ```python
-from coco import CoCo
+from coco_ts import CoCo
 
 model = CoCo.from_pretrained(device="cuda:0")
 result = model.predict(
@@ -67,7 +73,7 @@ Keep `--extra vllm` on `uv run` commands so uv retains the optional dependencies
 For a shared GPU, reduce the memory allocation explicitly:
 
 ```python
-from coco import CoCo
+from coco_ts import CoCo
 
 def main():
     with CoCo.from_pretrained(
