@@ -1,9 +1,10 @@
 <h1 align="center">CoCo</h1>
 
-<h2 align="center">TSFM Meets LLM: <ins>Co</ins>ntext as <ins>Co</ins>variate (NeurIPS'26)</h2>
+<h2 align="center">TSFM Meets LLM: <ins>Co</ins>ntext as <ins>Co</ins>variates (NeurIPS'26)</h2>
 
 <p align="center">
-  📄 <a href="https://neurips.cc/virtual/2026/loc/sydney/poster/149079">Paper</a> &nbsp;|&nbsp;
+  📄 <a href="https://arxiv.org/abs/2611.05515">Paper</a> &nbsp;|&nbsp;
+  📝 <a href="https://utaustin-swarmlab.github.io/2026/11/04/CoCo.html">Blog</a> &nbsp;|&nbsp;
   <img src="assets/github.svg" width="16" height="16" alt="GitHub icon"> <a href="https://github.com/UTAustin-SwarmLab/CoCo">GitHub</a> &nbsp;|&nbsp;
   🤗 <a href="https://huggingface.co/collections/SWARM-Lab/coco-6ac8255ad044393eed8316c0">Hugging Face</a>
 </p>
@@ -24,15 +25,13 @@ research repository, or evaluation dataset is required.
 
 ## Installation
 
-From the repository directory, install the locked dependencies with `uv` and
-authenticate with Hugging Face:
+From the repository directory, install the locked dependencies with `uv`:
 
 ```bash
 uv sync
-uv run hf auth login
 ```
 
-The two `SWARM-Lab` adapter repositories currently require authorized access.
+The two `SWARM-Lab` adapter repositories are publicly accessible.
 Base models and adapters are fetched through Hugging Face and cached outside
 the Git repository. No weights or evaluation datasets are bundled.
 
@@ -129,8 +128,8 @@ contains all parsed forecasts in original units, for inspection.
 - **LLM adapter:** `SWARM-Lab/CoCo-Qwen3-4B-LoRA`, for `Qwen/Qwen3-4B-Instruct-2507`.
 - **Chronos2 adapter:** `SWARM-Lab/CoCo-Chronos2-LoRA`, for `amazon/chronos-2`.
 
-Both adapters are currently private. `CoCo.from_pretrained()` loads them using
-your Hugging Face credentials. It also accepts local paths or Hub IDs through
+Both adapters are public. `CoCo.from_pretrained()` downloads them from Hugging
+Face. It also accepts local paths or Hub IDs through
 `llm_base`, `chronos_base`, `llm_adapter`, and `chronos_adapter`; optional revision
 arguments allow pinning all four components. Chronos2's adapter is merged in
 memory; Qwen's adapter is loaded by PEFT or vLLM. Models load once per instance.
@@ -141,8 +140,17 @@ memory; Qwen's adapter is loaded by PEFT or vLLM. Models load once per instance.
 
 **CoCo achieves the best average rank and mean MAE against 27 baselines across 30 datasets (95 settings).** Lower is better for both metrics.
 
-## Release links
+## Citation
 
-The Paper link currently points to the NeurIPS poster page.
-The Hugging Face link above points to the CoCo collection; model access remains
-restricted during private staging.
+If you use CoCo in your research, please cite:
+
+```bibtex
+@inproceedings{ram2026coco,
+  title = {{TSFM} Meets {LLM}: Context as Covariates},
+  author = {Hemanth Ram and Sai Shankar Narasimhan and Shubhankar Agarwal and Sandeep Chinchali},
+  booktitle = {The Fortieth Annual Conference on Neural Information Processing Systems},
+  year = {2026},
+  url = {https://openreview.net/forum?id=t2nNTWgHfq},
+  arxiv = {https://arxiv.org/abs/2611.05515}
+}
+```
